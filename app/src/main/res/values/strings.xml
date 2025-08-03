@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">30 Days of Mountain Hikes</string>
+    <string name="sinaia_saua_varfului_cu_dor_cabana_padina">Sinaia - Saua Varfului cu Dor - Cabana Padina</string>
+    <string name="sinaia_cabana_omu_rasnov">Sinaia - Cabana Omu - Rasnov</string>
+    <string name="poiana_tapului_cabana_stana_regala">Poiana Tapului - Cabana Stana Regala</string>
+    <string name="poiana_tapului_cascada_urlatoarea">Poiana Tapului - Cascada Urlatoarea</string>
+    <string name="bran_cabana_omu">Bran - Poiana Gaura - Cabana Omu</string>
+    <string name="moieciu_pestera">Moieciu de Sus - Saua Batrana - Hotel Pestera</string>
+    <string name="moroeni_scropoasa">Moroeni - Plaiul Priporului - Cabana Scropoasa</string>
+    <string name="curmatura_podu_dambovitei">Cabana Curmatura - Vf. La Om - Podu Dambovitei</string>
+    <string name="casa_folea">Casa Folea - Prapastiile Zarnestilor</string>
+    <string name="cormaia">Cormaia - Valea Cormaia - Saua Obaraia Rebrii</string>
+    <string name="cheia">Cheia - Vf. Gropsoarele - Cabana Vf. Ciucas</string>
+    <string name="poiana_stanii">Poiana Stanii - Culmea Gropsoarele - Zaganu</string>
+    <string name="casa_de_vanatoare">Casa de vanatoare Campusel - Piatra Iorgovanului - Lunca Berhina</string>
+    <string name="lacul_bucura">Lacul Bucura - Poarta Bucurei - sub Varful Bucura - Custura Retezatului - Varful Retezat</string>
+    <string name="rausor">Rausor - Lacul Stevia - Varful Retezat</string>
+    <string name="lunca_berhina">Lunca Berhina - Crucea Trăznitului - Lacul Bucura</string>
+    <string name="circuitul_lacurilor">Circuitul lacurilor</string>
+    <string name="cabana_balea">Cabana Balea Cascada - Cascada Balea</string>
+    <string name="vistea_mare">Vf. Vistea Mare - Vf. Moldoveanu</string>
+    <string name="busteni">Busteni - Cabana Piatra Arsa</string>
 </resources>
