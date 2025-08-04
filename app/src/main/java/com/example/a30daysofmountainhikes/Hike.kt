@@ -7,5 +7,7 @@ data class Hike(
     @DrawableRes val ImageResourceId: Int,
     @StringRes val StringResourceId: Int,
     val level: String,
-    val mountain: String
+    val mountain: String,
+    val info: String,
+    val day: Int
 )
