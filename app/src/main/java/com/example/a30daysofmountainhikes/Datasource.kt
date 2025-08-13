@@ -13,7 +13,8 @@ class Datasource {
                 "mediu / dificil",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_sinaia_padina),
-                1
+                1,
+                trail = R.drawable.red_square
             ),
             Hike(
                 R.drawable.sinaia_cabana_omu_rasnov,
@@ -21,7 +22,8 @@ class Datasource {
                 "mediu / dificil",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_sinaia_omu_rasnov),
-                2
+                2,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.poiana_apului___cabana_st_na_regal,
@@ -29,7 +31,8 @@ class Datasource {
                 "usor / mediu",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_poiana_stana),
-                3
+                3,
+                trail = R.drawable.yellow_square
             ),
             Hike(
                 R.drawable.poiana_apului___cascada_urlatoarea,
@@ -37,7 +40,8 @@ class Datasource {
                 "usor / mediu",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_poiana_urlatoarea),
-                4
+                4,
+                trail = R.drawable.red_cross
             ),
             Hike(
                 R.drawable.bran___poiana_gaura___cabana_omu,
@@ -45,7 +49,8 @@ class Datasource {
                 "mediu / dificil",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_bran_omu),
-                5
+                5,
+                trail = R.drawable.blue_cross
             ),
             Hike(
                 R.drawable.moieciu_de_sus___aua_batr_na___hotel_petera,
@@ -53,7 +58,8 @@ class Datasource {
                 "mediu / dificil",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_moieciu_pes),
-                6
+                6,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.moroeni___plaiul_priporului___cabana_scropoasa,
@@ -61,7 +67,8 @@ class Datasource {
                 "mediu",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_moroeni_scropoasa),
-                7
+                7,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.cabana_curmtura_vf__la_om_podu_d_mboviei,
@@ -69,7 +76,8 @@ class Datasource {
                 "dificil",
                 "Piatra Craiului",
                 info = stringResource(R.string.info_piatra_craiului),
-                8
+                8,
+                trail = R.drawable.red_square
             ),
             Hike(
                 R.drawable.casa_folea_prpstiile_zrnetilor,
@@ -77,7 +85,8 @@ class Datasource {
                 "usor / mediu",
                 "Piatra Craiului",
                 info = stringResource(R.string.info_casa_folea),
-                8
+                8,
+                trail = R.drawable.yellow_square
             ),
             Hike(
                 R.drawable.cormaia___valea_cormaia___aua_ob_ria_rebrii,
@@ -85,7 +94,8 @@ class Datasource {
                 "mediu",
                 "Rodnei",
                 info = stringResource(R.string.info_rodnei),
-                9
+                9,
+                trail = R.drawable.blue_cross
             ),
             Hike(
                 R.drawable.cheia___vf__gropoarele___cabana_vf__ciuca,
@@ -93,7 +103,8 @@ class Datasource {
                 "mediu / dificil",
                 "Ciucas",
                 info = stringResource(R.string.info_ciucas),
-                10
+                10,
+                trail = R.drawable.red_cross
             ),
             Hike(
                 R.drawable.poiana_st_nii___culmea_gropoarele___zganu,
@@ -101,7 +112,8 @@ class Datasource {
                 "mediu / dificil",
                 "Ciucas",
                 info = stringResource(R.string.info_poiana_stanii),
-                11
+                11,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.casa_de_v_ntoare_c_mpuel___piatra_iorgovanului___lunca_berhina,
@@ -109,7 +121,8 @@ class Datasource {
                 "mediu",
                 "Retezat",
                 info = stringResource(R.string.info_retezat1),
-                12
+                12,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.lacul_bucura___poarta_bucurei___sub_v_rful_bucura___custura_retezatului___v_rful_retezat,
@@ -117,7 +130,8 @@ class Datasource {
                 "mediu",
                 "Retezat",
                 info = stringResource(R.string.info_retezat2),
-                13
+                13,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.r_uor___lacul_tevia__v_rful_retezat,
@@ -125,7 +139,8 @@ class Datasource {
                 "mediu",
                 "Retezat",
                 info = stringResource(R.string.info_retezat3),
-                14
+                14,
+                trail = R.drawable.red_square
             ),
             Hike(
                 R.drawable.lunca_berhina___crucea_trznitului___lacul_bucura,
@@ -133,7 +148,8 @@ class Datasource {
                 "mediu",
                 "Retezat",
                 info = stringResource(R.string.info_retezat4),
-                15
+                15,
+                trail = R.drawable.red_square
             ),
             Hike(
                 R.drawable.circuitul_lacurilor,
@@ -141,7 +157,8 @@ class Datasource {
                 "mediu",
                 "Retezat",
                 info = stringResource(R.string.info_retezat5),
-                16
+                16,
+                trail = R.drawable.yellow_square
             ),
             Hike(
                 R.drawable.cabana_b_lea_cascad___cascada_b_lea,
@@ -149,7 +166,8 @@ class Datasource {
                 "usor",
                 "Fagaras - Iezer - Papusa",
                 info = stringResource(R.string.info_fagaras1),
-                17
+                17,
+                trail = R.drawable.yellow_square
             ),
             Hike(
                 R.drawable.vf__vitea_mare___vf__moldoveanu,
@@ -157,7 +175,8 @@ class Datasource {
                 "mediu / dificil",
                 "Fagaras - Iezer - Papusa",
                 info = stringResource(R.string.info_fagaras2),
-                18
+                18,
+                trail = R.drawable.blue_cross
             ),
             Hike(
                 R.drawable.buteni___cabana_piatra_ars,
@@ -165,7 +184,8 @@ class Datasource {
                 "mediu / dificil",
                 "Bucegi - Leaota",
                 info = stringResource(R.string.info_busteni),
-                19
+                19,
+                trail = R.drawable.blue_cross
             ),
             Hike(
                 R.drawable.zarnesti_prapastiile_zarnesti,
@@ -173,7 +193,8 @@ class Datasource {
                 "ușor",
                 "Piatra Craiului",
                 info = stringResource(R.string.zarnesti_prapastiile_info),
-                20
+                20,
+                trail = R.drawable.red_cross
             ),
             Hike(
                 R.drawable.cheile_cibului,
@@ -181,7 +202,8 @@ class Datasource {
                 "mediu",
                 "Trascău",
                 info = stringResource(R.string.cheile_cibului_ardeu_info),
-                21
+                21,
+                trail = R.drawable.red_cross
             ),
             Hike(
                 R.drawable.dn7e68,
@@ -189,7 +211,8 @@ class Datasource {
                 "mediu",
                 "Zarand",
                 info = stringResource(R.string.rosia_noua_info),
-                22
+                22,
+                trail = R.drawable.red_cross
             ),
             Hike(
                 R.drawable.comandau,
@@ -197,7 +220,8 @@ class Datasource {
                 "mediu",
                 "Vrancei",
                 info = stringResource(R.string.comandau_refugiul_info),
-                23
+                23,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.stana_carnituri,
@@ -205,7 +229,8 @@ class Datasource {
                 "mediu",
                 "Bucegi",
                 info = stringResource(R.string.carnituri_vidreni_info),
-                24
+                24,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.cluj_napoca,
@@ -213,7 +238,8 @@ class Datasource {
                 "ușor",
                 "Apuseni",
                 info = stringResource(R.string.padurea_hoia_info),
-                25
+                25,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.bretcu,
@@ -221,7 +247,8 @@ class Datasource {
                 "ușor / mediu",
                 "Nemira",
                 info =stringResource( R.string.bretcu_oituz_info),
-                26
+                26,
+                trail = R.drawable.yellow_cross
             ),
             Hike(
                 R.drawable.poiana_cozanei,
@@ -229,7 +256,8 @@ class Datasource {
                 "ușor",
                 "Mehedinți",
                 info = stringResource(R.string.piatra_cu_semne_info),
-                27
+                27,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.chiojdu,
@@ -237,7 +265,8 @@ class Datasource {
                 "ușor",
                 "Buzău",
                 info = stringResource(R.string.chiojdu_trovanti_info),
-                28
+                28,
+                trail = R.drawable.blue_square
             ),
             Hike(
                 R.drawable.rezervatia_paleontologica,
@@ -245,7 +274,8 @@ class Datasource {
                 "ușor",
                 "Postăvaru",
                 info = stringResource(R.string.purcareni_fosile_info),
-                29
+                29,
+                trail = R.drawable.red_square
             ),
             Hike(
                 R.drawable.poiana_marului,
@@ -253,7 +283,8 @@ class Datasource {
                 "mediu",
                 "Țarcu",
                 info = stringResource(R.string.pietrele_scorilo_info),
-                30
+                30,
+                trail = R.drawable.red_square
             )
         )
     }

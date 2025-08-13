@@ -9,5 +9,6 @@ data class Hike(
     val level: String,
     val mountain: String,
     val info: String,
-    val day: Int
+    val day: Int,
+    val trail: Int
 )

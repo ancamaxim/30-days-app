@@ -1,6 +1,5 @@
 package com.example.a30daysofmountainhikes
 
-import android.R.attr.shape
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,8 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,30 +21,38 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -56,19 +61,19 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            _30DaysOfMountainHikesTheme {
+            _30DaysOfMountainHikesTheme(darkTheme = false) {
                 DaysApp()
             }
         }
@@ -80,12 +85,13 @@ class MainActivity : ComponentActivity() {
 fun DaysApp(modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
+        containerColor = MaterialTheme.colorScheme.surface,
         topBar = {
             TopAppBar(
                 title = {
                     Text(
                         text = stringResource(R.string.app_name),
-                        color = onPrimaryContainerLight,
+                        color = MaterialTheme.colorScheme.onPrimary,
                         style = MaterialTheme.typography.titleLarge.copy(
                             shadow = Shadow(
                                 color = Color.Black.copy(alpha = 0.25f),
@@ -95,11 +101,11 @@ fun DaysApp(modifier: Modifier = Modifier) {
                         fontWeight = FontWeight.Bold
                     ) },
                 colors = TopAppBarColors(
-                    primaryContainerLight,
-                    primaryContainerLight,
-                    onPrimaryContainerLight,
-                    onPrimaryContainerLight,
-                    primaryLight
+                    MaterialTheme.colorScheme.primary,
+                    MaterialTheme.colorScheme.primary,
+                    MaterialTheme.colorScheme.onPrimary,
+                    MaterialTheme.colorScheme.onPrimary,
+                    MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = { Icon(painter = painterResource(R.drawable.mountain_icon), null) }
             )
@@ -111,6 +117,7 @@ fun DaysApp(modifier: Modifier = Modifier) {
             padding = innerPadding
         )
         Sidebar(Modifier.padding(innerPadding))
+
     }
 }
 
@@ -120,7 +127,11 @@ fun DaysList(
     padding: PaddingValues,
     modifier: Modifier = Modifier
 ) {
+    val listState = rememberLazyListState()
+    val coroutineScope = rememberCoroutineScope()
+
     LazyColumn (
+        state = listState,
         contentPadding = padding,
         modifier = Modifier.padding(8.dp).fillMaxSize()
     ) {
@@ -132,7 +143,32 @@ fun DaysList(
                     hike = hike,
                     modifier = modifier,
                 )
+                if (hike.day == 30) {
+                    Finish()
+                }
+
             }
+        }
+    }
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(padding),
+        contentAlignment = Alignment.BottomEnd
+    ) {
+        FloatingActionButton (
+            onClick = {
+                coroutineScope.launch {
+                    listState.animateScrollToItem(hikeList.size - 1)
+                }
+            },
+            modifier = Modifier
+                .align(Alignment.BottomEnd),
+            elevation = FloatingActionButtonDefaults.elevation(12.dp),
+            containerColor = MaterialTheme.colorScheme.error,
+            contentColor = MaterialTheme.colorScheme.onError
+        ) {
+            Text("Scroll to End")
         }
     }
 }
@@ -146,10 +182,10 @@ fun HikeCard(
         modifier = modifier.padding(16.dp),
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardColors(
-            containerColor = secondaryDarkHighContrast,
-            contentColor = onSecondaryContainerLight,
-            disabledContentColor = onSecondaryContainerLight,
-            disabledContainerColor = secondaryDarkHighContrast
+            containerColor = MaterialTheme.colorScheme.secondary,
+            contentColor = MaterialTheme.colorScheme.onSecondary,
+            disabledContentColor = MaterialTheme.colorScheme.onSecondary,
+            disabledContainerColor = MaterialTheme.colorScheme.secondary
         ),
         elevation = CardDefaults.cardElevation(12.dp)
     ) {
@@ -194,6 +230,13 @@ fun AnimatedMountainLevel(hike: Hike) {
     Box (
         modifier = Modifier.fillMaxWidth()
     ) {
+        Image(
+            painter = painterResource(hike.trail),
+            contentDescription = "trail marking",
+            modifier = Modifier
+                .fillMaxWidth(0.15f)
+                .align(Alignment.CenterStart)
+        )
         IconButton(
             onClick = {
                 currIndex = (currIndex + 1) % description.size
@@ -278,17 +321,18 @@ fun Sidebar(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
         Row (
             modifier = Modifier.align(Alignment.CenterStart),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
             AnimatedVisibility(
                 visible = expanded
             ) {
                 Card(
                     colors = CardColors(
-                        containerColor = secondaryDarkHighContrast,
-                        contentColor = onSecondaryContainerLight,
-                        disabledContentColor = onSecondaryContainerLight,
-                        disabledContainerColor = secondaryDarkHighContrast
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary,
+                        disabledContentColor = MaterialTheme.colorScheme.onPrimary,
+                        disabledContainerColor = MaterialTheme.colorScheme.primary
                     ),
                     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                     modifier = Modifier.width(50.dp)
@@ -331,6 +375,12 @@ fun Sidebar(modifier: Modifier = Modifier) {
             }
             IconButton(
                 onClick = { expanded = !expanded },
+                colors = IconButtonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary,
+                    disabledContentColor = MaterialTheme.colorScheme.onPrimary,
+                    disabledContainerColor = MaterialTheme.colorScheme.primary
+                )
             ) {
                 Icon(
                     imageVector = if (expanded) {
@@ -348,6 +398,35 @@ fun Sidebar(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun Finish() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(R.drawable.medal),
+            contentDescription = "finish",
+            modifier = Modifier
+                .size(200.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .align(Alignment.CenterHorizontally),
+            contentScale = ContentScale.Crop
+        )
+        Text(
+            "You reached the end!",
+            color = MaterialTheme.colorScheme.inverseSurface,
+            style = MaterialTheme.typography.titleLarge.copy(
+                shadow = Shadow(
+                    color = Color.Black.copy(alpha = 0.25f),
+                    offset = Offset(2f, 2f),
+                    blurRadius = 4f
+                )),
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
 
 @Composable
 fun CardText(hike: Hike) {
@@ -364,7 +443,7 @@ fun CardText(hike: Hike) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    _30DaysOfMountainHikesTheme {
+    _30DaysOfMountainHikesTheme(darkTheme = false) {
         DaysApp()
     }
 }
