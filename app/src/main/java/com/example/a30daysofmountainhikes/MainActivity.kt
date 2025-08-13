@@ -156,19 +156,35 @@ fun DaysList(
             .padding(padding),
         contentAlignment = Alignment.BottomEnd
     ) {
-        FloatingActionButton (
-            onClick = {
-                coroutineScope.launch {
-                    listState.animateScrollToItem(hikeList.size - 1)
-                }
-            },
-            modifier = Modifier
-                .align(Alignment.BottomEnd),
-            elevation = FloatingActionButtonDefaults.elevation(12.dp),
-            containerColor = MaterialTheme.colorScheme.error,
-            contentColor = MaterialTheme.colorScheme.onError
+        Column(
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalAlignment = Alignment.End
         ) {
-            Text("Scroll to End")
+            FloatingActionButton (
+                onClick = {
+                    coroutineScope.launch {
+                        listState.animateScrollToItem(0)
+                    }
+                },
+                elevation = FloatingActionButtonDefaults.elevation(12.dp),
+                containerColor = MaterialTheme.colorScheme.error,
+                contentColor = MaterialTheme.colorScheme.onError
+            ) {
+                Text("Scroll to Start")
+            }
+
+            FloatingActionButton (
+                onClick = {
+                    coroutineScope.launch {
+                        listState.animateScrollToItem(hikeList.size - 1)
+                    }
+                },
+                elevation = FloatingActionButtonDefaults.elevation(12.dp),
+                containerColor = MaterialTheme.colorScheme.error,
+                contentColor = MaterialTheme.colorScheme.onError
+            ) {
+                Text("Scroll to End")
+            }
         }
     }
 }
