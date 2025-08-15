@@ -50,10 +50,10 @@ This app applies several key **Kotlin and Jetpack Compose concepts**:
 ## Screenshots
 
 **Light theme**  
-<img src="screenshots/light_theme.png" alt="Light theme" width="300"/>
+<img src="app/screenshots/light_theme.png" alt="Light theme" width="300"/>
 
 **Dark theme**  
-<img src="screenshots/dark_theme.png" alt="Dark theme" width="300"/>
+<img src="app/screenshots/dark_theme.png" alt="Dark theme" width="300"/>
 
 **Light theme expanded**  
-<img src="screenshots/light_theme_details.png" alt="Light theme expanded" width="300"/>
+<img src="app/screenshots/light_theme_details.png" alt="Light theme expanded" width="300"/>
